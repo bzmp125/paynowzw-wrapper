@@ -36,14 +36,16 @@ if($_SERVER['REQUEST_METHOD']=="OPTIONS"){
         }else{
             $resource = ucfirst(strtolower($resource));
 
-            if(file_exists("controllers/_sm.{$resource}.php")){
+            if(file_exists("controllers/{$resource}.php")){
                 //this is to clear the overhead that would arise with dynamic requires since the model is loosely coupled.
-                require "controllers/_sm.$resource.php";
+                require "controllers/$resource.php";
                 $resource_instance = new $resource($params);
                 $return = $resource_instance->processRequest();
             }else{
                 //something went wrong
                 //return an error or something
+                $return['success'] = false;
+                $return['message'] = "RESOURCE NOT FOUND.";
             }
         }
 

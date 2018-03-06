@@ -47,7 +47,12 @@ function send_curl($url, $method, $headers, $data, $json=null){
             $e->getCode(), $e->getMessage()),
             E_USER_ERROR);
     }
+}
 
+function showMe($thing_to_show){
+    $json_response = @json_encode($thing_to_show, JSON_PRETTY_PRINT);
+    echo $json_response;
+    exit;
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-class Pay extends main{
+class Payment extends main{
     var $_params;
     private $paynow_integration_key = "paynow_integration_key_here";
     private $paynow_integration_id = "paynow_integration_id_here";
@@ -8,14 +8,6 @@ class Pay extends main{
     function Pay($_params){
         parent::__construct();
         $this->_params = $_params;
-    }
-
-    private function get_paynow_integration_key(){
-        return $this->paynow_integration_key;
-    }
-
-    private function get_paynow_integration_id(){
-        return $this->paynow_integration_id;
     }
 
     function processRequest(){

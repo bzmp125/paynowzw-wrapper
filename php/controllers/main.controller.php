@@ -2,10 +2,20 @@
 
 
 class main{
+    private $paynow_integration_key = "54fd639e-cb3f-400b-887e-598a42ba9959";
+    private $paynow_integration_id = "4877";
 
     public function __construct(){
         //this is where you can set your 'Global' variable, accessible accross all your child classes
         $this->request_method = $_SERVER['REQUEST_METHOD'];
+    }
+
+    protected function get_paynow_integration_key(){
+        return $this->paynow_integration_key;
+    }
+
+    protected function get_paynow_integration_id(){
+        return $this->paynow_integration_id;
     }
 
     public function get_client_ip() {

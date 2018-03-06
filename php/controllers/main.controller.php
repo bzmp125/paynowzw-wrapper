@@ -2,8 +2,8 @@
 
 
 class main{
-    private $paynow_integration_key = "54fd639e-cb3f-400b-887e-598a42ba9959";
-    private $paynow_integration_id = "4877";
+    private $paynow_integration_key = "paynow_integration_key_here";
+    private $paynow_integration_id = "paynow_integration_id_here";
 
     public function __construct(){
         //this is where you can set your 'Global' variable, accessible accross all your child classes
